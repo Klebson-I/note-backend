@@ -7,6 +7,7 @@ export const noteRouter = Router();
 noteRouter
     .get("/",async (req:Request, res:Response) => {
         const data=await NoteRecord.getAll();
+        console.log(data);
         res.json(data);
     })
     .get("/:id",async (req:Request,res:Response)=>{
@@ -18,7 +19,7 @@ noteRouter
         const resp : NoteResponse = req.body;
         const note = new NoteRecord(resp);
         await note.insert();
-        res.json(200);
+        res.status(200).send("OK");
     })
     .put("/",async(req:Request,res:Response)=>{
         const resp : NoteEntityResponse = req.body;
@@ -26,12 +27,12 @@ noteRouter
         note.title=resp.title;
         note.text=resp.text;
         await note.update();
-        res.json(200);
+        res.status(200).send("OK");
     })
     .delete("/",async(req:Request,res:Response)=>{
         const {_id} = req.body;
         console.log(_id);
         const note = await NoteRecord.getOne(_id);
         await note.delete();
-        res.json(200);
+        res.status(200).send("OK");
     })

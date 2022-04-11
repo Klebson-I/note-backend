@@ -9,16 +9,12 @@ app.use(cors({
     origin:'http://localhost:3000'
 }));
 
-(async()=>{
-    const data= await NoteRecord.getAll();
-    console.log(data);
-})();
 
 app.use(express.json());
 app.use("/note",noteRouter);
 
 
 
-app.listen(process.env.PORT,()=>{
+app.listen(3001,()=>{
     console.log("App is running on http://localhost:3001");
 })

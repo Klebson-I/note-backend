@@ -12,3 +12,4 @@ export const getCollection = async ():Promise<[Collection,MongoClient]> => {
 }
 
 // mongodb+srv://lukaszkleba:direstraits99@cluster0.xerdy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// mongodb://localhost:27017
