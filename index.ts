@@ -11,6 +11,9 @@ app.use(cors({
 
 
 app.use(express.json());
+app.get("/",(req,res)=>{
+    res.redirect("/note");
+})
 app.use("/note",noteRouter);
 
 
