@@ -15,6 +15,6 @@ app.use("/note",noteRouter);
 
 
 
-app.listen(3001,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("App is running on http://localhost:3001");
 })
