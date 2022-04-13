@@ -4,4 +4,3 @@ It applies mongodb database set in cloud (MongoDb Atlas).
 
 To start install packages by : npm i
 Then use start script or type in terminal : tsnd index.ts
-
